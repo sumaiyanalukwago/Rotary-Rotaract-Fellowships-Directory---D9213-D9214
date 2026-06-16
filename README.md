@@ -1,18 +1,20 @@
-# 🌐 Rotary & Rotaract Club Fellowships Directory (D9213 & D9214)
+# Rotary & Rotaract Club Fellowships Directory (D9213 & D9214)
 
 Welcome to the central, open-source directory for Rotary and Rotaract Club fellowship details across **District 9213** and **District 9214**. 
 
-This project bridges the gap for visiting Rotarians, Rotaractors, and guests trying to find fellowships across Uganda and Tanzania. 
+This project bridges the gap for visiting Rotarians, Rotaractors, and guests trying to find fellowships across District 9213 and 9214. 
 
 ---
-
-## ✍️ Project Founder & Maintainer
-
 This project was envisioned, created, and is maintained by:
 * **Sumaiya Nalukwago**
     * *President*, Rotaract Club of Mbarara City (2026/2027)
     * *Vice President of Presidents*, District 9214
-    * *PR Lead*, Western Mega Fellowship
+    * *PR Lead*, Western Mega Fellowship (2026/2027)
+    * *Club PR*, RAC Mbarara City (2026/2027)
+    * *Club Administrator*, RAC Mbarara City (2025/2026)
+    * *Club PR*, RAC MUST (2022/2023)
+    * *Facilitator*, RYLA-D9214 (2024)
+    * *Attendee*,101 DCA-D9214 (2026)
 
 ---
 
@@ -54,6 +56,10 @@ This project was envisioned, created, and is maintained by:
 | Rotaract Club of Busitema University (Mbale) | Rotaract | 6:00 PM | Bellodian Hall, Mbale |
 | Rotary Club of Bweyogerere Central | Rotary | 7:00 PM | Unique Hotel, Bweyogerere |
 
+### 🗓️ Saturday
+| Club Name | Club Type | Fellowship Time | Location / Venue |
+| :--- | :--- | :--- | :--- |
+
 ### 🗓️ Sunday
 | Club Name | Club Type | Fellowship Time | Location / Venue |
 | :--- | :--- | :--- | :--- |
@@ -64,45 +70,11 @@ This project was envisioned, created, and is maintained by:
 
 ## 📌 District 9214 (Uganda - West & South, and Tanzania)
 
-### 🗓️ Monday
-| Club Name | Club Type | Fellowship Time | Location / Venue |
-| :--- | :--- | :--- | :--- |
-| Rotary Club of Muyenga Bukasa | Rotary | 6:30 PM | Hotel International, Muyenga |
-| Rotary Club of Moshi | Rotary | 6:30 PM | Moshi Town, Tanzania |
 
-### 🗓️ Tuesday
-| Club Name | Club Type | Fellowship Time | Location / Venue |
-| :--- | :--- | :--- | :--- |
-| Rotary Club of Bunga | Rotary | 7:00 PM | Kampala |
-| Rotary Club of Kampala Nsambya | Rotary | 7:00 PM | Nsambya, Kampala |
-
-### 🗓️ Wednesday
-| Club Name | Club Type | Fellowship Time | Location / Venue |
-| :--- | :--- | :--- | :--- |
-| Rotary Club of Muyenga | Rotary | 6:30 PM | International Hotel Muyenga, Kampala |
-| Rotary Club of Mbarara East | Rotary | 6:00 PM | Mbarara |
-
-### 🗓️ Thursday
-| Club Name | Club Type | Fellowship Time | Location / Venue |
-| :--- | :--- | :--- | :--- |
-| Rotary Club of Mbarara | Rotary | 6:00 PM | Rotary House, Mbarara |
-| Rotary Club of Muyenga Sunrise | Rotary | 7:00 AM | Hotel International, Muyenga |
-| Rotary Club of Lubowa | Rotary | 6:30 PM | Quality Shopping Village, Lubowa |
-
-### 🗓️ Friday
-| Club Name | Club Type | Fellowship Time | Location / Venue |
-| :--- | :--- | :--- | :--- |
-| Rotary Club of Kyengera Town | Rotary | 7:00 PM | Kyengera, Kampala |
-| Rotary Club of Kigo Seven Lakes Golf | Rotary | 6:00 PM | Lake Victoria Serena Golf Resort |
-
-### 🗓️ Sunday
-| Club Name | Club Type | Fellowship Time | Location / Venue |
-| :--- | :--- | :--- | :--- |
-| Rotary Club of Muyenga Sunday Sunset | Rotary | 5:00 PM | Hotel International, Muyenga |
 
 ---
 
-## 🛠️ Usage & Integration Instructions
+## Usage & Integration Instructions
 
 Developers can integrate this directory data into custom mapping tools, mobile finders, or club websites using either a backend approach (Python) or a quick frontend build (JavaScript + CSS).
 
