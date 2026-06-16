@@ -8,13 +8,14 @@ This project bridges the gap for visiting Rotarians, Rotaractors, and guests try
 This project was envisioned, created, and is maintained by:
 * **Sumaiya Nalukwago**
     * *President*, Rotaract Club of Mbarara City (2026/2027)
-    * *Vice President of Presidents*, District 9214
+    * *Vice President of Presidents*, District 9214 (2026/2027)
+    * *Attendee*,101 DCA-D9214 (2026)
     * *PR Lead*, Western Mega Fellowship (2026/2027)
     * *Club PR*, RAC Mbarara City (2026/2027)
     * *Club Administrator*, RAC Mbarara City (2025/2026)
-    * *Club PR*, RAC MUST (2022/2023)
     * *Facilitator*, RYLA-D9214 (2024)
-    * *Attendee*,101 DCA-D9214 (2026)
+    * *Club PR*, RAC MUST (2022/2023)
+   
 
 ---
 ## 🔍 Interactive Fellowship Finder
