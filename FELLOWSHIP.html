@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotary & Rotaract Fellowship Directory (D9213 & D9214)</title>
+    <style>
+        /* Modern UI Styling using Rotary Brand Colors */
+        :root {
+            --rotary-blue: #00246C;
+            --rotary-gold: #F7A81B;
+            --dark-gray: #333333;
+            --light-bg: #F4F6F9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+            color: var(--dark-gray);
+        }
+
+        header {
+            background-color: var(--rotary-blue);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            border-bottom: 5px solid var(--rotary-gold);
+            position: relative;
+        }
+
+        /* Spinning Rotary Wheel Header Icon */
+        .rotary-logo {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        header h1 {
+            margin: 5px 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-style: italic;
+            color: #dddddd;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        /* Search & Filter Section */
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .controls input, .controls select {
+            padding: 12px;
+            font-size: 1rem;
+            border: 2px solid #cccccc;
+            border-radius: 6px;
+            flex: 1;
+            min-width: 200px;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .controls input:focus, .controls select:focus {
+            border-color: var(--rotary-blue);
+        }
+
+        /* Leadership Badge */
+        .leadership-card {
+            background: white;
+            border-left: 5px solid var(--rotary-gold);
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        /* Fellowship Cards Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--rotary-blue);
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card.rotaract {
+            border-top-color: #D91B5C; /* Rotaract Pink/Crimson */
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .badge.rotary-bg { background-color: #E2ECF7; color: var(--rotary-blue); }
+        .badge.rotaract-bg { background-color: #FCE8EF; color: #D91B5C; }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            margin: 6px 0;
+            font-size: 0.95rem;
+        }
+
+        .card .label {
+            font-weight: bold;
+            color: #666;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 2rem;
+            color: #888;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <svg class="rotary-logo" viewBox="0 0 100 100" fill="var(--rotary-gold)">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="var(--rotary-gold)" stroke-width="6"/>
+            <circle cx="50" cy="50" r="22" fill="none" stroke="var(--rotary-gold)" stroke-width="5"/>
+            <path d="M50 10 L50 90 M10 50 L90 50 M22 22 L78 78 M22 78 L78 22" stroke="var(--rotary-gold)" stroke-width="4"/>
+            <circle cx="50" cy="50" r="10" fill="var(--rotary-blue)"/>
+            <circle cx="50" cy="50" r="6" fill="var(--rotary-gold)"/>
+            <rect x="48" y="42" width="4" height="6" fill="var(--rotary-gold)"/>
+            <circle cx="50" cy="50" r="41" fill="none" stroke="var(--rotary-gold)" stroke-width="2" stroke-dasharray="4,3"/>
+        </svg>
+        <h1>D9213 & D9214 Fellowship Directory</h1>
+        <p>Connecting Rotary & Rotaract across East Africa</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="leadership-card">
+            <strong>Project Leader:</strong> Sumaiya Nalukwago | President, RAC Mbarara City (2026/2027) | VP of Presidents D9214 | PR Lead Western Mega Fellowship.
+            <br><small style="color: #666;">This is an open-source initiative. Submit a pull request on GitHub to update your club records.</small>
+        </div>
+
+        <div class="controls">
+            <input type="text" id="searchInput" placeholder="🔍 Search club name, town, or venue...">
+            <select id="districtFilter">
+                <option value="all">All Districts</option>
+                <option value="D9213">District 9213</option>
+                <option value="D9214">District 9214</option>
+            </select>
+            <select id="dayFilter">
+                <option value="all">All Days</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+        </div>
+
+        <div class="grid" id="clubGrid"></div>
+    </div>
+
+    <script>
+        // Database arrays containing the club structural properties
+        const clubsData = [
+            // D9213 Data
+            { name: "Rotary Club of Kampala North", type: "Rotary", district: "D9213", day: "Monday", time: "6:00 PM", venue: "Protea Hotel, Kololo, Kampala" },
+            { name: "Rotary Club of Kampala Early Bird", type: "Rotary", district: "D9213", day: "Monday", time: "7:00 AM", venue: "Hotel Africana, Kampala" },
+            { name: "Rotary Club of Bukoto", type: "Rotary", district: "D9213", day: "Tuesday", time: "7:00 PM", venue: "Kabira Country Club, Kampala" },
+            { name: "Rotary Club of Buwaate", type: "Rotary", district: "D9213", day: "Tuesday", time: "7:00 PM", venue: "Mukutano Meatery, Kira-Kasangati Rd" },
+            { name: "Rotaract Club of Clarke International University", type: "Rotaract", district: "D9213", day: "Tuesday", time: "6:00 PM", venue: "CIU Campus, Lower Block Rm 8, Namuwongo" },
+            { name: "Rotaract Club of Cape Munyonyo", type: "Rotaract", district: "D9213", day: "Tuesday", time: "6:30 PM", venue: "Ponnus Restaurant, Soya Bunga" },
+            { name: "Rotary Club of Arua", type: "Rotary", district: "D9213", day: "Wednesday", time: "6:00 PM", venue: "Le Tsuba Hotel, Arua" },
+            { name: "Rotaract Club of Bukoto", type: "Rotaract", district: "D9213", day: "Wednesday", time: "7:00 PM", venue: "Kabira Country Club, Kampala" },
+            { name: "Rotary Club of Bugolobi", type: "Rotary", district: "D9213", day: "Wednesday", time: "6:00 PM", venue: "City Royal Hotel, Bugolobi" },
+            { name: "Rotary Club of Adjumani", type: "Rotary", district: "D9213", day: "Thursday", time: "7:00 PM", venue: "Aragan Hotel, Adjumani" },
+            { name: "Rotary Club of Bukedea", type: "Rotary", district: "D9213", day: "Thursday", time: "7:00 PM", venue: "Bukedea Town" },
+            { name: "Rotaract Club of Cavendish University", type: "Rotaract", district: "D9213", day: "Thursday", time: "5:00 PM", venue: "Cavendish Law School, Kamwokya" },
+            { name: "Rotaract Club of Bugolobi", type: "Rotaract", district: "D9213", day: "Thursday", time: "7:00 PM", venue: "City Royal Hotel, Bugolobi" },
+            { name: "Rotaract Club of Buganda Royal Institute", type: "Rotaract", district: "D9213", day: "Friday", time: "6:00 PM", venue: "Buganda Royal Institute Campus" },
+            { name: "Rotaract Club of Busitema University (Mbale)", type: "Rotaract", district: "D9213", day: "Friday", time: "6:00 PM", venue: "Bellodian Hall, Mbale" },
+            { name: "Rotary Club of Bweyogerere Central", type: "Rotary", district: "D9213", day: "Friday", time: "7:00 PM", venue: "Unique Hotel, Bweyogerere" },
+            { name: "Rotaract Club of Bugiri", type: "Rotaract", district: "D9213", day: "Sunday", time: "5:30 PM", venue: "Executive Hotel, Bugiri" },
+            { name: "Rotary Club of Bulindo", type: "Rotary", district: "D9213", day: "Sunday", time: "5:00 PM", venue: "Conabry Hotel, Bulindo" },
+
+            // D9214 Data
+            { name: "Rotary Club of Muyenga Bukasa", type: "Rotary", district: "D9214", day: "Monday", time: "6:30 PM", venue: "Hotel International, Muyenga" },
+            { name: "Rotary Club of Moshi", type: "Rotary", district: "D9214", day: "Monday", time: "6:30 PM", venue: "Moshi Town, Tanzania" },
+            { name: "Rotary Club of Bunga", type: "Rotary", district: "D9214", day: "Tuesday", time: "7:00 PM", venue: "Kampala" },
+            { name: "Rotary Club of Kampala Nsambya", type: "Rotary", district: "D9214", day: "Tuesday", time: "7:00 PM", venue: "Nsambya, Kampala" },
+            { name: "Rotary Club of Muyenga", type: "Rotary", district: "D9214", day: "Wednesday", time: "6:30 PM", venue: "International Hotel Muyenga, Kampala" },
+            { name: "Rotary Club of Mbarara East", type: "Rotary", district: "D9214", day: "Wednesday", time: "6:00 PM", venue: "Mbarara" },
+            { name: "Rotary Club of Mbarara", type: "Rotary", district: "D9214", day: "Thursday", time: "6:00 PM", venue: "Rotary House, Mbarara" },
+            { name: "Rotary Club of Muyenga Sunrise", type: "Rotary", district: "D9214", day: "Thursday", time: "7:00 AM", venue: "Hotel International, Muyenga" },
+            { name: "Rotary Club of Lubowa", type: "Rotary", district: "D9214", day: "Thursday", time: "6:30 PM", venue: "Quality Shopping Village, Lubowa" },
+            { name: "Rotary Club of Kyengera Town", type: "Rotary", district: "D9214", day: "Friday", time: "7:00 PM", venue: "Kyengera, Kampala" },
+            { name: "Rotary Club of Kigo Seven Lakes Golf", type: "Rotary", district: "D9214", day: "Friday", time: "6:00 PM", venue: "Lake Victoria Serena Golf Resort" },
+            { name: "Rotary Club of Muyenga Sunday Sunset", type: "Rotary", district: "D9214", day: "Sunday", time: "5:00 PM", venue: "Hotel International, Muyenga" }
+        ];
+
+        const clubGrid = document.getElementById('clubGrid');
+        const searchInput = document.getElementById('searchInput');
+        const districtFilter = document.getElementById('districtFilter');
+        const dayFilter = document.getElementById('dayFilter');
+
+        function displayClubs() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const selectedDistrict = districtFilter.value;
+            const selectedDay = dayFilter.value;
+
+            clubGrid.innerHTML = '';
+
+            const filteredClubs = clubsData.filter(club => {
+                const matchesSearch = club.name.toLowerCase().includes(searchTerm) || club.venue.toLowerCase().includes(searchTerm);
+                const matchesDistrict = selectedDistrict === 'all' || club.district === selectedDistrict;
+                const matchesDay = selectedDay === 'all' || club.day === selectedDay;
+                return matchesSearch && matchesDistrict && matchesDay;
+            });
+
+            if (filteredClubs.length === 0) {
+                clubGrid.innerHTML = `<div class="no-results">No clubs found matching criteria. Contact Admin to add your club!</div>`;
+                return;
+            }
+
+            filteredClubs.forEach(club => {
+                const card = document.createElement('div');
+                card.className = `card ${club.type.toLowerCase()}`;
+                card.innerHTML = `
+                    <span class="badge ${club.type.toLowerCase() === 'rotary' ? 'rotary-bg' : 'rotaract-bg'}">${club.type} | ${club.district}</span>
+                    <h3>${club.name}</h3>
+                    <p><span class="label">Day:</span> ${club.day}</p>
+                    <p><span class="label">Time:</span> ${club.time}</p>
+                    <p><span class="label">Venue:</span> ${club.venue}</p>
+                `;
+                clubGrid.appendChild(card);
+            });
+        }
+
+        // Add event listeners for dynamic real-time filtering
+        searchInput.addEventListener('input', displayClubs);
+        districtFilter.addEventListener('change', displayClubs);
+        dayFilter.addEventListener('change', displayClubs);
+
+        // Run initial configuration render
+        displayClubs();
+    </script>
+</body>
+</html>

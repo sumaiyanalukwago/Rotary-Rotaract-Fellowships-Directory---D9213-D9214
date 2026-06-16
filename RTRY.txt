@@ -1,0 +1,3 @@
+├── index.html         <-- The main web page (HTML, CSS, JS, and Rotary Wheel)
+├── README.md          <-- The documentation page we created earlier
+└── LICENSE            <-- Your MIT Open-Source License
