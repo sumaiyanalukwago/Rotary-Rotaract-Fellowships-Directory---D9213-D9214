@@ -16,42 +16,20 @@ This project was envisioned, created, and is maintained by:
     * *Facilitator*, RYLA-D9214 (2024)
     * *Club PR*, RAC MUST (2022/2023)
    
-
----
-## 🔍 Interactive Fellowship Finder
-
-Use the dynamic search box below to instantly filter clubs by name, district, day of the week, or meeting venue.
-
-<!-- Raw HTML Interface Embedded into GitHub Markdown -->
-<div style="background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 25px; border-top: 4px solid #00246C;">
-    <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 15px;">
-        <input type="text" id="gitSearchInput" placeholder="🔍 Search club, town, or venue..." style="flex: 2; min-width: 200px; padding: 10px; border: 2px solid #cccccc; border-radius: 5px; font-size: 15px; outline: none;">
-        <select id="gitDistrictFilter" style="flex: 1; min-width: 130px; padding: 10px; border: 2px solid #cccccc; border-radius: 5px; font-size: 15px;">
-            <option value="all">All Districts</option>
-            <option value="D9213">District 9213</option>
-            <option value="D9214">District 9214</option>
-        </select>
-        <select id="gitDayFilter" style="flex: 1; min-width: 130px; padding: 10px; border: 2px solid #cccccc; border-radius: 5px; font-size: 15px;">
-            <option value="all">All Days</option>
-            <option value="Monday">Monday</option>
-            <option value="Tuesday">Tuesday</option>
-            <option value="Wednesday">Wednesday</option>
-            <option value="Thursday">Thursday</option>
-            <option value="Friday">Friday</option>
-            <option value="Saturday">Saturday</option>
-            <option value="Sunday">Sunday</option>
-        </select>
-    </div>
-    <div id="fellowshipBadgeCounter" style="font-weight: bold; font-size: 14px; color: #555555; margin-bottom: 15px;">Showing all clubs</div>
-    <div id="dynamicClubList" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 15px; max-height: 500px; overflow-y: auto; padding-right: 5px;">
-        <!-- Hydrated dynamically by JavaScript -->
+<!-- 📅 Weekly Fellowship Schedule Component -->
+<div id="fellowshipScheduleContainer" style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; color: #1a202c;">
+    <h2 style="font-size: 24px; font-weight: 700; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 25px; color: #00246C;">
+        📅 Weekly Fellowship Schedule (Sorted by Day)
+    </h2>
+    <div id="weeklyTimelineView">
+        <!-- Injected dynamically by JavaScript -->
     </div>
 </div>
 
 <script>
 (() => {
-    const database = [
-        // District 9213 Data Base
+    const rawDatabase = [
+        // District 9213 Database
         { name: "Rotary Club of Kampala North", type: "Rotary", district: "D9213", day: "Monday", time: "6:00 PM", venue: "Protea Hotel, Kololo, Kampala" },
         { name: "Rotary Club of Kampala Early Bird", type: "Rotary", district: "D9213", day: "Monday", time: "7:00 AM", venue: "Hotel Africana, Kampala" },
         { name: "Rotary Club of Bukoto", type: "Rotary", district: "D9213", day: "Tuesday", time: "7:00 PM", venue: "Kabira Country Club, Kampala" },
@@ -71,7 +49,7 @@ Use the dynamic search box below to instantly filter clubs by name, district, da
         { name: "Rotaract Club of Bugiri", type: "Rotaract", district: "D9213", day: "Sunday", time: "5:30 PM", venue: "Executive Hotel, Bugiri" },
         { name: "Rotary Club of Bulindo", type: "Rotary", district: "D9213", day: "Sunday", time: "5:00 PM", venue: "Conabry Hotel, Bulindo" },
 
-        // District 9214 Balanced Data Base
+        // District 9214 Database
         { name: "Rotary Club of Muyenga Bukasa", type: "Rotary", district: "D9214", day: "Monday", time: "6:30 PM", venue: "Hotel International, Muyenga" },
         { name: "Rotary Club of Moshi", type: "Rotary", district: "D9214", day: "Monday", time: "6:30 PM", venue: "Moshi Town, Tanzania" },
         { name: "Rotaract Club of Kampala City Vibrant", type: "Rotaract", district: "D9214", day: "Monday", time: "6:30 PM", venue: "Mackinnon Suites, Nakasero" },
@@ -94,52 +72,58 @@ Use the dynamic search box below to instantly filter clubs by name, district, da
         { name: "Rotaract Club of Lukaya", type: "Rotaract", district: "D9214", day: "Sunday", time: "4:00 PM", venue: "Lukaya Town" }
     ];
 
-    const grid = document.getElementById('dynamicClubList');
-    const input = document.getElementById('gitSearchInput');
-    const distFilter = document.getElementById('gitDistrictFilter');
-    const dayFilter = document.getElementById('gitDayFilter');
-    const counter = document.getElementById('fellowshipBadgeCounter');
+    const targetDays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const viewContainer = document.getElementById("weeklyTimelineView");
 
-    function render() {
-        const term = input.value.toLowerCase();
-        const dist = distFilter.value;
-        const day = dayFilter.value;
+    let finalHTML = "";
 
-        const filtered = database.filter(c => {
-            const mSearch = c.name.toLowerCase().includes(term) || c.venue.toLowerCase().includes(term);
-            const mDist = dist === 'all' || c.district === dist;
-            const mDay = day === 'all' || c.day === day;
-            return mSearch && mDist && mDay;
-        });
+    targetDays.forEach(currentDay => {
+        // Isolate clubs running on this day iteration
+        const dayClubs = rawDatabase.filter(c => c.day === currentDay);
+        
+        if (dayClubs.length === 0) return;
 
-        counter.innerText = `Found ${filtered.length} matching fellowship${filtered.length === 1 ? '' : 's'}`;
-        grid.innerHTML = filtered.map(c => {
-            const isRotaract = c.type.toLowerCase() === 'rotaract';
-            const topColor = isRotaract ? '#D91B5C' : '#00246C';
-            const badgeBg = isRotaract ? '#FCE8EF' : '#E2ECF7';
-            const badgeTxt = isRotaract ? '#D91B5C' : '#00246C';
-            
-            return `
-                <div style="background: #fdfdfd; border-radius: 6px; padding: 15px; border-top: 4px solid ${topColor}; box-shadow: 0 2px 4px rgba(0,0,0,0.05); color: #333333;">
-                    <span style="display: inline-block; padding: 2px 6px; font-size: 11px; font-weight: bold; border-radius: 4px; background: ${badgeBg}; color: ${badgeTxt}; margin-bottom: 8px;">${c.type} | ${c.district}</span>
-                    <h4 style="margin: 0 0 8px 0; font-size: 15px; color: #111;">${c.name}</h4>
-                    <div style="font-size: 13px; margin: 4px 0;"><strong style="color: #666;">Day:</strong> ${c.day}</div>
-                    <div style="font-size: 13px; margin: 4px 0;"><strong style="color: #666;">Time:</strong> ${c.time}</div>
-                    <div style="font-size: 13px; margin: 4px 0;"><strong style="color: #666;">Venue:</strong> ${c.venue}</div>
+        finalHTML += `
+            <div style="margin-bottom: 35px;">
+                <h3 style="font-size: 18px; font-weight: 700; color: #2d3748; margin: 0 0 15px 0; display: flex; align-items: center; gap: 8px;">
+                    <span style="background: #edf2f7; padding: 4px 12px; border-radius: 6px;">📌 ${currentDay}</span>
+                </h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
+        `;
+
+        dayClubs.forEach(club => {
+            const isRotaract = club.type.toLowerCase() === 'rotaract';
+            const topBorderColor = isRotaract ? '#D91B5C' : '#00246C';
+            const badgeBgColor = isRotaract ? '#FCE8EF' : '#E2ECF7';
+            const badgeTextColor = isRotaract ? '#D91B5C' : '#00246C';
+
+            finalHTML += `
+                <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid ${topBorderColor}; border-radius: 8px; padding: 18px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s;" onmouseenter="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)';" onmouseleave="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.02)';">
+                    <div>
+                        <span style="display: inline-block; padding: 3px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; background: ${badgeBgColor}; color: ${badgeTextColor}; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
+                            ${club.type} • ${club.district}
+                        </span>
+                        <h4 style="margin: 0 0 12px 0; font-size: 16px; color: #1a202c; font-weight: 700; line-height: 1.4;">
+                            ${club.name}
+                        </h4>
+                    </div>
+                    <div style="border-top: 1px dashed #e2e8f0; padding-top: 10px; font-size: 13px; color: #4a5568;">
+                        <div style="margin: 4px 0; display: flex;"><span style="width: 65px; font-weight: 600; color: #718096;">Time:</span> <span style="font-weight: 500; color: #2d3748;">${club.time}</span></div>
+                        <div style="margin: 4px 0; display: flex;"><span style="width: 65px; font-weight: 600; color: #718096;">Venue:</span> <span style="flex: 1; line-height: 1.3;">${club.venue}</span></div>
+                    </div>
                 </div>
             `;
-        }).join('');
-    }
+        });
 
-    input.addEventListener('input', render);
-    distFilter.addEventListener('change', render);
-    dayFilter.addEventListener('change', render);
-    render();
+        finalHTML += `
+                </div>
+            </div>
+        `;
+    });
+
+    viewContainer.innerHTML = finalHTML;
 })();
 </script>
+---
 
-## Usage & Integration Instructions
 
-Developers can integrate this directory data into custom mapping tools, mobile finders, or club websites using either a backend approach (Python) or a quick frontend build (JavaScript + CSS).
-```bash
-   pip install markdown beautifulsoup4
