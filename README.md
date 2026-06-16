@@ -79,6 +79,8 @@ This project was envisioned, created, and is maintained by:
     *   **Time:** 6:00 PM | **Venue:** Mbarara City Café
 
 ### 📌 Friday
+*   **Rotaract Club of Mbarara City** (D9214)
+    *   **Time:** 6:00 PM | **Venue:** The Rotary House, CPP-Kiyanja
 *   **Rotaract Club of Buganda Royal Institute** (D9213)
     *   **Time:** 6:00 PM | **Venue:** Buganda Royal Institute Campus
 *   **Rotaract Club of Busitema University (Mbale)** (D9213)
