@@ -45,6 +45,8 @@ This project was envisioned, created, and is maintained by:
     *   **Time:** 7:00 PM | **Venue:** Nsambya, Kampala
 *   **Rotaract Club of Muyenga Tankhill** (D9214)
     *   **Time:** 6:30 PM | **Venue:** Hotel International, Muyenga
+*   **Rotary Club of Mbarara East** (D9214)
+    *   **Time:** 6:00 PM | **Venue:** The Rotary house, Kiyanja
 
 ### 📌 Wednesday
 *   **Rotary Club of Arua** (D9213)
