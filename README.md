@@ -85,8 +85,8 @@ This project was envisioned, created, and is maintained by:
     *   **Time:** 7:00 AM | **Venue:** Hotel International, Muyenga
 *   **Rotary Club of Lubowa** (D9214)
     *   **Time:** 6:30 PM | **Venue:** Quality Shopping Village, Lubowa
-*   **Rotary Club of Mbarara City** (D9214)
-    *   **Time:** 6:00 PM | **Venue:** Mbarara City Café
+*   **Rotary Club of Mbarara ** (D9214)
+    *   **Time:** 6:00 PM | **Venue:** The Rotary House, Kiyanja
 *   **Rotaract Club of Medical Stars** (D9214)
     *   **Time:** 01:00 PM | **Venue:** NMS Head Offices
 
