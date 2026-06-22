@@ -80,13 +80,13 @@ This project was envisioned, created, and is maintained by:
 *   **Rotaract Club of Bugolobi** (D9213)
     *   **Time:** 7:00 PM | **Venue:** City Royal Hotel, Bugolobi
 *   **Rotary Club of Mbarara** (D9214)
-    *   **Time:** 6:00 PM | **Venue:** Rotary House, Mbarara
+    *   **Time:** 6:00 PM | **Venue:** Rotary House, CPP-Kiyanja
 *   **Rotary Club of Muyenga Sunrise** (D9214)
     *   **Time:** 7:00 AM | **Venue:** Hotel International, Muyenga
 *   **Rotary Club of Lubowa** (D9214)
     *   **Time:** 6:30 PM | **Venue:** Quality Shopping Village, Lubowa
 *   **Rotary Club of Mbarara ** (D9214)
-    *   **Time:** 6:00 PM | **Venue:** The Rotary House, Kiyanja
+    *   **Time:** 6:00 PM | **Venue:** The Rotary House,CPP-Kiyanja
 *   **Rotaract Club of Medical Stars** (D9214)
     *   **Time:** 01:00 PM | **Venue:** NMS Head Offices
 
