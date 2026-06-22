@@ -29,6 +29,9 @@ This project was envisioned, created, and is maintained by:
     *   **Time:** 6:30 PM | **Venue:** Moshi Town, Tanzania
 *   **Rotaract Club of Kampala City Vibrant** (D9214)
     *   **Time:** 6:30 PM | **Venue:** Mackinnon Suites, Nakasero
+*   **Rotary Club of Mbarara Ranchers** (D9214)
+    *   **Time:** 6:00 PM | **Venue:** The Rotary House, Kiyanja
+
 
 ### 📌 Tuesday
 *   **Rotary Club of Bukoto** (D9213)
