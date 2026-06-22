@@ -66,6 +66,8 @@ This project was envisioned, created, and is maintained by:
 *   **Rotary Club of Mbarara East** (D9214)
     *   **Time:** 6:00 PM | **Venue:** Mbarara
 *   **Rotaract Club of Mbarara** (D9214)
+    *   **Time:** 6:00 PM | **Venue:** The Rotary House, Kiyanja
+*   **Rotaract Club of Mbarara** (D9214)
     *   **Time:** 6:00 PM | **Venue:** Adit Mall, Mbarara
 
 ### 📌 Thursday
