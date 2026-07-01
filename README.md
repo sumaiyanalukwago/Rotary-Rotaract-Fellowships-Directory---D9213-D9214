@@ -63,10 +63,8 @@ This project was envisioned, created, and is maintained by:
     *   **Time:** 6:00 PM | **Venue:** City Royal Hotel, Bugolobi
 *   **Rotary Club of Muyenga** (D9214)
     *   **Time:** 6:30 PM | **Venue:** International Hotel Muyenga, Kampala
-*   **Rotary Club of Mbarara East** (D9214)
-    *   **Time:** 6:00 PM | **Venue:** Mbarara
-*   **Rotaract Club of Mbarara** (D9214)
-    *   **Time:** 6:00 PM | **Venue:** The Rotary House, Kiyanja
+*   **Rotary Club of Mbarara City** (D9214)
+    *   **Time:** 6:00 PM | **Venue:** Kash Hotel,Mbarara
 *   **Rotary Club of Ntare** (D9214)
     *   **Time:** 5:30 PM | **Venue:** Ntare Gardens, Mbarara
 
