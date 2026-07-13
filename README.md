@@ -9,7 +9,7 @@ This project was envisioned, created, and is maintained by:
 * **Sumaiya Nalukwago**
     * *President*, Rotaract Club of Mbarara City (2026/2027)
     * *Vice President of Presidents*, District 9214 (2026/2027)
-    * *Attendee*,101 DCA-D9214 (2026)
+    * *Attendee*,101 DCA-D9214 (2026) 
     * *PR Lead*, Western Mega Fellowship (2026/2027)
     * *Club PR*, RAC Mbarara City (2026/2027)
     * *Club Administrator*, RAC Mbarara City (2025/2026)
